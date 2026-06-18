@@ -22,9 +22,10 @@ class PendaftaranReguler extends Pendaftaran {
         return $stmt->fetchAll(PDO::FETCH_ASSOC); 
     }
 
-    // Implementasi wajib dari abstract method Parent
+    // Overriding tahap 5 biaya pendaftarannya dasar
     public function hitungTotalBiaya() {
-        return $this->biayaPendaftaranDasar; // Implementasi detail bisa disesuaikan di tahap berikutnya
+        // Tarif standar murni
+        return $this->biayaPendaftaranDasar;
     }
 
     public function tampilkanInfoJalur() {

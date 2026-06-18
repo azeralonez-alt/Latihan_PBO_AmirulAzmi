@@ -22,9 +22,10 @@ class PendaftaranKedinasan extends Pendaftaran {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    // Implementasi wajib dari abstract method Parent
+    //Overriding Tahap 5-Biaya Pendaftaran Kedinasan
     public function hitungTotalBiaya() {
-        return $this->biayaPendaftaranDasar;
+        // Dikenakan surcharge tambahan sebesar 25% (dikali 1.25)
+        return $this->biayaPendaftaranDasar * 1.25;
     }
 
     public function tampilkanInfoJalur() {

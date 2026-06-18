@@ -22,9 +22,10 @@ class PendaftaranPrestasi extends Pendaftaran {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    // Implementasi wajib dari abstract method Parent
+    //Overriding Tahap 5 Biaya Prestasi
     public function hitungTotalBiaya() {
-        return $this->biayaPendaftaranDasar; 
+        // Mendapatkan potongan apresiasi prestasi sebesar Rp50.000
+        return $this->biayaPendaftaranDasar - 50000;
     }
 
     public function tampilkanInfoJalur() {
